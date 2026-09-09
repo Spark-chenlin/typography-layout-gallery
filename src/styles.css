@@ -88,6 +88,7 @@ picture { display: block; }
 .site-footer { margin: 0 40px; padding: 28px 0 32px; border-top: 1px solid var(--line); display: flex; gap: 24px; align-items: center; justify-content: space-between; font-size: 12px; }
 .footer-brand { font-size: 15px; font-weight: 700; }
 .site-footer > span { color: var(--muted); margin-right: auto; }
+.footer-github:hover, .footer-about:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Detail: the same paper and type, with room to read. */
 .detail-page { max-width: 1520px; margin: auto; padding: 30px 40px 60px; }
@@ -192,7 +193,7 @@ picture { display: block; }
   .count-hint { display: none; }
   .site-footer { margin: 0 20px; gap: 18px; flex-wrap: wrap; align-items: center; }
   .site-footer > span { flex-basis: 100%; order: 4; }
-  .site-footer > a:nth-of-type(2) { margin-left: auto; }
+  .footer-github { margin-left: auto; }
   .detail-page { padding: 20px 20px 45px; }
   .detail-copy { padding-left: 25px; }
   .related h2 { font-size: 25px; }

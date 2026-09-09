@@ -11,6 +11,8 @@ export function About() {
     <section className="about-section"><h2>八种观察角度。</h2><div className="category-directory">{categories.map(c => <Link to={`/?category=${c.id}#collection`} key={c.id}>
       <span className="directory-id">{c.id}</span><div><h3>{c.name}</h3><p>{c.description}</p></div><span>{c.count} ↗</span>
     </Link>)}</div></section>
+    <section className="about-section"><h2>开放阅读，<br />也开放使用。</h2><div><p>网站源代码、72 张版式样图与配套的文字版式 Skill 已在 GitHub 开源。你可以浏览完整资料、下载项目，或从仓库了解这份图鉴的组织方式。</p>
+      <a className="enter" href="https://github.com/Spark-chenlin/typography-layout-gallery" target="_blank" rel="noreferrer" aria-label="在 GitHub 查看文字版式画廊项目（新窗口打开）">在 GitHub 查看项目 <span aria-hidden="true">↗</span></a></div></section>
     <section className="about-section"><h2>如何使用这份图鉴。</h2><div><p>先明确内容量、阅读顺序和表达强度，再比较版式的适用场景与边界。样图提供结构启发，具体使用时仍需根据真实文字重新安排字号、间距与比例。</p>
       <p>样图为 AI 生成的视觉示例，在统一视觉条件下展示编排机制。名称、原理、适合与不适合场景以页面上的文字说明为准。这是一套便于学习和比较的分类，并非唯一或绝对完整的学术标准。</p>
       <Link className="enter" to="/#collection">开始探索版式 <span aria-hidden="true">↗</span></Link></div></section>

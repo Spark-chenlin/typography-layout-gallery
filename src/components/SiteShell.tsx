@@ -38,7 +38,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
     </header>
     <main id="main" tabIndex={-1}>{children}</main>
     <footer className="site-footer"><Link className="footer-brand" to="/">文字版式画廊</Link>
-      <span>72 种文字组织方法 / 8 个分类</span><Link to="/about">关于这份图鉴 ↗</Link>
+      <span>72 种文字组织方法 / 8 个分类</span>
+      <a className="footer-github" href="https://github.com/Spark-chenlin/typography-layout-gallery" target="_blank" rel="noreferrer" aria-label="在 GitHub 查看文字版式画廊项目（新窗口打开）">GitHub ↗</a>
+      <Link className="footer-about" to="/about">关于这份图鉴 ↗</Link>
       <button className="text-button" onClick={() => window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>回到顶部 ↑</button>
     </footer>
   </>;
