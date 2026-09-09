@@ -34,7 +34,7 @@ function RouteEffects() {
 export function SiteShell({ children }: { children: ReactNode }) {
   return <><RouteEffects /><a className="skip" href="#main">跳到主要内容</a>
     <header className="mast"><Link className="mast-brand" to="/">文字版式画廊<span>THE TYPE PANORAMA</span></Link>
-      <nav aria-label="主导航"><Link to="/#collection">全部版式 / 72</Link><NavLink to="/about">图集说明 ↗</NavLink></nav>
+      <nav aria-label="主导航"><Link to="/#collection">全部版式 / 72</Link><NavLink className="mast-about" to="/about">图集说明 ↗</NavLink><a className="mast-github" href="https://github.com/Spark-chenlin/typography-layout-gallery" target="_blank" rel="noreferrer" aria-label="在 GitHub 查看文字版式画廊项目（新窗口打开）">GitHub ↗</a></nav>
     </header>
     <main id="main" tabIndex={-1}>{children}</main>
     <footer className="site-footer"><Link className="footer-brand" to="/">文字版式画廊</Link>

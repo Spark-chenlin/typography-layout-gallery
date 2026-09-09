@@ -25,7 +25,8 @@ picture { display: block; }
 .mast-brand { font-size: 18px; font-weight: 700; letter-spacing: -.6px; }
 .mast-brand span { font: 12px Bahnschrift, sans-serif; letter-spacing: 1px; margin-left: 22px; }
 .mast nav { display: flex; gap: 36px; font-size: 12px; align-items: center; }
-.mast nav a:last-child { border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+.mast-about { border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+.mast-github:hover { text-decoration: underline; text-underline-offset: 4px; }
 .mast nav a[aria-current="page"] { color: #a62a1c; border-color: currentColor; }
 
 /* Approved 17: a continuous oversized field behind a fixed paper cut. */
@@ -168,7 +169,7 @@ picture { display: block; }
   .mast { height: 62px; padding: 0 20px; }
   .mast-brand { font-size: 16px; }
   .mast-brand span, .mast nav > a:first-child { display: none; }
-  .mast nav { font-size: 12px; gap: 0; }
+  .mast nav { font-size: 12px; gap: 18px; }
   .megascene { height: calc(100svh - 62px); min-height: 620px; }
   .infinite-angle { width: 1150px; top: -380px; transform-origin: 50% 380px; }
   .tile-group { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 15px; padding-bottom: 15px; }
