@@ -1,0 +1,33 @@
+{
+  "name": "typography-layout-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "images": "node scripts/optimize-images.mjs",
+    "readme:gallery": "node scripts/update-readme-gallery.mjs",
+    "skill:build": "node scripts/build-skill-package.mjs",
+    "content:sync": "npm run validate && npm run images && npm run readme:gallery && npm run skill:build",
+    "validate": "node scripts/validate-content-data.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run validate && npm run images && npm run typecheck && vite build && node scripts/prune-deploy-assets.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 5173",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "sharp": "^0.35.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  }
+}

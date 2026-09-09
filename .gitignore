@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.vite/
+.env
+.env.*
+!.env.example
+coverage/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+Thumbs.db
+
+# Local-only project history and agent context
+AGENTS.md
+design-demos/
+source-archive/
+docs/direction-approved.md
+docs/implementation-notes.md
+docs/迁移记录.md
+docs/项目完整计划.md
+scripts/build-content-data.mjs

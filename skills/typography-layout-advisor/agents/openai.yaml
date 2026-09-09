@@ -1,0 +1,5 @@
+interface:
+  display_name: "文字版式顾问"
+  short_description: "从72种文字组织结构中检索、比较并生成可执行的版式方案"
+  brand_color: "#D82718"
+  default_prompt: "使用 $typography-layout-advisor 为这份内容选择合适的文字版式，并说明结构、适用场景与使用边界。"
