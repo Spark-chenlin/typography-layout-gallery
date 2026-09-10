@@ -40,5 +40,6 @@ export function LayoutImage({ item, sizes = '(max-width: 600px) 45vw, (max-width
       <span className="hero-loading-status">IMAGE / LOADING</span>
     </span>
     {image}
+    <span className="hero-loading-scan" aria-hidden="true" />
   </span>;
 }
