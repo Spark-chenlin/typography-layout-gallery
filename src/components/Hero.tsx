@@ -68,7 +68,7 @@ export function Hero() {
       {[0, 1].map(copy => <div className="tile-group" key={copy} ref={copy === 0 ? group : undefined} aria-hidden={copy === 1 ? true : undefined}>
         {chosen.map(item => <Link key={item.id} className="poster" to={`/layouts/${item.id}`} state={{ from: '/#collection' }}
           tabIndex={copy ? -1 : 0} aria-label={`查看${item.nameZh}`}>
-          <LayoutImage item={item} sizes="(max-width: 760px) 220px, (min-width: 1230px) 22vw, 260px" eager={copy === 0} />
+          <LayoutImage item={item} sizes="(max-width: 760px) 220px, (min-width: 1230px) 22vw, 260px" deferUntilNear />
         </Link>)}
       </div>)}
     </div></div>

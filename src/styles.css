@@ -35,6 +35,7 @@ picture { display: block; }
 #infinite-track { will-change: transform; }
 .tile-group { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 24px; padding-bottom: 24px; }
 .poster { min-width: 0; display: block; background: white; box-shadow: 6px 10px 18px #25251c20; }
+.poster picture { aspect-ratio: 3 / 4; }
 .poster:hover { outline: 2px solid var(--ink); outline-offset: 4px; }
 .foreground { position: absolute; left: 0; bottom: 0; z-index: 3; width: 800px; height: 310px; pointer-events: none; }
 .foreground::before { position: absolute; inset: 0; content: ""; background: var(--paper); clip-path: polygon(0 0, 83% 0, 100% 100%, 0 100%); }

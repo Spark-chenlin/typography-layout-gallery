@@ -141,7 +141,7 @@ npm run preview
 
 `build` 包括 72 条内容校验、TypeScript 检查与生产打包。浏览器测试使用本机 Microsoft Edge，覆盖桌面与移动尺寸；如其他机器未安装 Edge，可安装它或调整 `playwright.config.ts` 的浏览器配置。
 
-正式构建输出在 `dist/`，这也是 Cloudflare 唯一需要部署的目录。构建会保留 216 张响应式 WebP，并从部署包移除 72 张只用于内容溯源和重新生成图片的源 PNG。Cloudflare Workers 通过 `wrangler.jsonc` 的 SPA fallback 支持 `/layouts/A01` 等深层地址；源目录仍保留 `_redirects`，供其他兼容平台使用。
+正式构建输出在 `dist/`，这也是 Cloudflare 唯一需要部署的目录。构建会保留 288 张响应式 WebP，并从部署包移除 72 张只用于内容溯源和重新生成图片的源 PNG。Cloudflare Workers 通过 `wrangler.jsonc` 的 SPA fallback 支持 `/layouts/A01` 等深层地址；源目录仍保留 `_redirects`，供其他兼容平台使用。
 
 当前线上版本通过 Cloudflare Workers Static Assets 发布，配置见 `wrangler.jsonc`，正式域名为 `type.chenlinplay.top`。发布命令：
 
