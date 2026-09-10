@@ -6,7 +6,8 @@ export function LayoutImage({ item, sizes = '(max-width: 600px) 45vw, (max-width
 }) {
   const [failed, setFailed] = useState(false);
   const [nearViewport, setNearViewport] = useState(!deferUntilNear);
-  const picture = useRef<HTMLPictureElement>(null);
+  const [loaded, setLoaded] = useState(false);
+  const loadTarget = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (!deferUntilNear || nearViewport) return;
@@ -19,15 +20,25 @@ export function LayoutImage({ item, sizes = '(max-width: 600px) 45vw, (max-width
       setNearViewport(true);
       observer.disconnect();
     }, { rootMargin: '220px 120px' });
-    if (picture.current) observer.observe(picture.current);
+    if (loadTarget.current) observer.observe(loadTarget.current);
     return () => observer.disconnect();
   }, [deferUntilNear, nearViewport]);
 
   const productionFallback = `/images/layouts/optimized/${item.id}-1086.webp`;
-  return <picture ref={picture}>
+  const loadingState = deferUntilNear ? `hero-layout-image${nearViewport ? ' is-near' : ''}${loaded ? ' is-loaded' : ''}` : undefined;
+  const image = <picture>
     {nearViewport && !failed && <source type="image/webp" sizes={sizes}
       srcSet={[360, 480, 720, 1086].map(w => `/images/layouts/optimized/${item.id}-${w}.webp ${w}w`).join(', ')} />}
     {nearViewport && <img src={productionFallback} width={item.image.width} height={item.image.height}
-      alt={item.image.alt} loading={eager || deferUntilNear ? 'eager' : 'lazy'} decoding="async" onError={() => setFailed(true)} />}
+      alt={item.image.alt} loading={eager || deferUntilNear ? 'eager' : 'lazy'} decoding="async" onLoad={() => setLoaded(true)} onError={() => setFailed(true)} />}
   </picture>;
+  if (!deferUntilNear) return image;
+  return <span ref={loadTarget} className={loadingState}>
+    <span className="hero-loading-paper" aria-hidden="true">
+      <span className="hero-loading-id">{item.id}</span>
+      <span className="hero-loading-lines"><i /><i /></span>
+      <span className="hero-loading-status">IMAGE / LOADING</span>
+    </span>
+    {image}
+  </span>;
 }
